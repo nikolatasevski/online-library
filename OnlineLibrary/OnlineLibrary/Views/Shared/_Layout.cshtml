@@ -6,9 +6,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
-<body>
+<body style="padding: 50px 0px 0px 0px">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -17,26 +16,43 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Online Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, null, "homeID", null, null)</li>
+                    <li>@Html.ActionLink("About", "Index", "Home", null, null, "aboutID", null, null)</li>
+                    <li>@Html.ActionLink("Contact", "Index", "Home", null, null, "contactID", null, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer style="text-align:center; display:block;background-color:lightslategray;">
+            <div class="container-fluid" style="height:100px; justify-content:center; display:flex">
+                <a href="https://www.facebook.com/">
+                    <img src="~/Images/fb.png" style="width:80px; height:80px; border-style:none; margin: 10px 10px 0 0" />
+                </a>
+
+                <a href="https://www.instagram.com/">
+                    <img src="~/Images/instagram.png" style="width:80px; height:80px; border-style:none; margin: 10px 10px 0 0" />
+                </a>
+
+                <a href="https://www.linkedin.com/">
+                    <img src="~/Images/linkedin.png" style="width:80px; height:80px; border-style:none; margin: 10px 10px 0 0" />
+                </a>
+            </div>
+            <h3 style="text-align:center; color: white;">
+                &copy; &nbsp; Online Library 2020
+            </h3>
+            <p style="text-align:center; color: white; font-size: medium; margin-top: 10px;">Powered by</p>
+            <a href="https://dotnet.microsoft.com/" style="text-align:center; height:120px; color: white;">
+                <img src="~/Images/dotnetlogo.png" style="width:80px; height:80px; border-style:none; margin: 0px 0px 15px 0"/>
+            </a>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
