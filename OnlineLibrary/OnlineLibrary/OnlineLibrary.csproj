@@ -190,10 +190,13 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\fb.png" />
+    <Content Include="Images\grabbing-book-title.png" />
     <Content Include="Images\instagram.png" />
     <Content Include="Images\klementinum.jpg" />
+    <Content Include="Images\librarianRegistration.jpg" />
     <Content Include="Images\linkedin.png" />
     <Content Include="Images\dotnetlogo.png" />
+    <Content Include="Images\readingBook.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
