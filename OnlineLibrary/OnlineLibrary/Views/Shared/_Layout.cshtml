@@ -22,6 +22,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", null, null, "homeID", null, null)</li>
                     <li>@Html.ActionLink("About", "Index", "Home", null, null, "aboutID", null, null)</li>
+                    <li>@Html.ActionLink("Services", "Index", "Home", null, null, "servicesID", null, null)</li>
                     <li>@Html.ActionLink("Contact", "Index", "Home", null, null, "contactID", null, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -30,7 +31,7 @@
     </div>
     <div>
         @RenderBody()
-        <footer style="text-align:center; display:block;background-color:lightslategray;">
+        <footer style="text-align:center; display:block;background-color:lightslategray;" id="contactID">
             <div class="container-fluid" style="height:100px; justify-content:center; display:flex">
                 <a href="https://www.facebook.com/">
                     <img src="~/Images/fb.png" style="width:80px; height:80px; border-style:none; margin: 10px 10px 0 0" />
