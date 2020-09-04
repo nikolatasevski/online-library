@@ -214,3 +214,7 @@ C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\bin\Microso
 C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.csproj.CopyComplete
+C:\Users\Nikola\source\repos\OnlineLibrary\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.InitialCreate.resources
+C:\Users\Nikola\source\repos\OnlineLibrary\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.csproj.GenerateResource.cache
+C:\Users\Nikola\source\repos\OnlineLibrary\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.initial.resources
+C:\Users\Nikola\source\repos\OnlineLibrary\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.registerChanged.resources
