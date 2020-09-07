@@ -106,5 +106,31 @@ namespace OnlineLibrary.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //GET: AddToLibrary
+
+        public ActionResult AddToLibrary (int id)
+        {
+            var model = new AddToLibrary();
+            model.selectedLibrary = id;
+            model.Books = db.Books.ToList();
+            var library = db.Libraries.Find(model.selectedLibrary);
+            ViewBag.LibraryName = library.Name;
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult AddToLibrary(AddToLibrary model)
+        {
+            var library = db.Libraries.Find(model.selectedLibrary);
+            var book = db.Books.Find(model.selectedBook);
+            library.Books.Add(book);
+            db.SaveChanges();
+
+            return RedirectToAction("Index","Libraries");
+        }
+
+
     }
 }

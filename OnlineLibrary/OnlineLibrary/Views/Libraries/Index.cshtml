@@ -32,6 +32,10 @@
                             @Html.DisplayFor(modelItem => item.Address)
                         </td>
                         <td>
+                            <button style="border:none;" type="button" onclick="location.href='@Url.Action("AddToLibrary", "Libraries", new { id = item.LibraryId })'">
+                                <img style="height:15px; width:15px;" src="~/Images/addBook.jpg">
+                            </button>
+
                             <button style="border:none;" type="button" onclick="location.href='@Url.Action("Edit", "Libraries", new { id = item.LibraryId })'">
                                 <img style="height:15px; width:15px;" src="~/Images/edit.png">
                             </button>

@@ -1,0 +1,17 @@
+﻿@model OnlineLibrary.Models.AddToLibrary
+@{
+    ViewBag.Title = "AddToLibrary";
+}
+
+    <div class="container">
+        <h2>Add to Library : @ViewBag.LibraryName</h2>
+        @using (Html.BeginForm("AddToLibrary", "Libraries"))
+        {
+            <div class="form-group">
+                @Html.DropDownListFor(m => m.selectedBook, new SelectList(Model.Books, "BookId", "BookName"), new { @class = "form-control" })
+            </div>
+            @Html.HiddenFor(m => m.selectedLibrary)
+            <button type="submit" class="btn btn-primary">Add Book</button>
+        }
+
+    </div>

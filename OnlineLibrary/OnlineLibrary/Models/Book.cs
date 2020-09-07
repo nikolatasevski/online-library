@@ -16,7 +16,7 @@ namespace OnlineLibrary.Models
         public string BookName { get; set; }
 
         [Required]
-        public Author Author { get; set; }
+        public string Author { get; set; }
 
         [Required]
         public decimal Price { get; set; }

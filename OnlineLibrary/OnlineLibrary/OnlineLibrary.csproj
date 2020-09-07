@@ -189,6 +189,10 @@
     <Compile Include="Migrations\202009041824130_registerChanged.Designer.cs">
       <DependentUpon>202009041824130_registerChanged.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009071248317_changedBookModel.cs" />
+    <Compile Include="Migrations\202009071248317_changedBookModel.Designer.cs">
+      <DependentUpon>202009071248317_changedBookModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddRole.cs" />
@@ -367,6 +371,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\addBook.jpg" />
     <Content Include="Images\details.png" />
     <Content Include="Images\edit.png" />
     <Content Include="Images\fb.png" />
@@ -512,11 +517,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\AddRole.cshtml" />
-    <Content Include="Views\Books\Create.cshtml" />
-    <Content Include="Views\Books\Delete.cshtml" />
-    <Content Include="Views\Books\Details.cshtml" />
-    <Content Include="Views\Books\Edit.cshtml" />
-    <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\Libraries\Create.cshtml" />
     <Content Include="Views\Libraries\Delete.cshtml" />
     <Content Include="Views\Libraries\Details.cshtml" />
@@ -527,6 +527,12 @@
     <Content Include="Views\Authors\Details.cshtml" />
     <Content Include="Views\Authors\Edit.cshtml" />
     <Content Include="Views\Authors\Index.cshtml" />
+    <Content Include="Views\Libraries\AddToLibrary.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -553,6 +559,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009041824130_registerChanged.resx">
       <DependentUpon>202009041824130_registerChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009071248317_changedBookModel.resx">
+      <DependentUpon>202009071248317_changedBookModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

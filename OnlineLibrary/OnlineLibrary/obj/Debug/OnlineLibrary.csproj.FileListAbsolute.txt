@@ -222,3 +222,4 @@ C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\O
 C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.initial.resources
 C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.registerChanged.resources
 C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.csproj.GenerateResource.cache
+C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.changedBookModel.resources
