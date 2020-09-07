@@ -90,24 +90,7 @@ namespace OnlineLibrary.Controllers
         }
 
         // GET: Libraries/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Library library = db.Libraries.Find(id);
-            if (library == null)
-            {
-                return HttpNotFound();
-            }
-            return View(library);
-        }
-
-        // POST: Libraries/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
             Library library = db.Libraries.Find(id);
             db.Libraries.Remove(library);
