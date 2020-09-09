@@ -21,15 +21,29 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", null, null, "homeID", null, null)</li>
-                    <li>@Html.ActionLink("About", "Index", "Home", null, null, "aboutID", null, null)</li>
-                    <li>@Html.ActionLink("Services", "Index", "Home", null, null, "servicesID", null, null)</li>
-                    <li>@Html.ActionLink("Contact", "Index", "Home", null, null, "contactID", null, null)</li>
-                    <li>@Html.ActionLink("Libraries", "Index", "Libraries", null, null, null, null, null)</li>
-                    <li>@Html.ActionLink("Books", "Index", "Books", null, null, null, null, null)</li>
-                    <li>@Html.ActionLink("Reserve Book", "ReserveBook", "Libraries", null, null, null, null, null)</li>
-                    <li>@Html.ActionLink("My reservations", "MyReservations", "Account", null, null, null, null, null)</li>
 
+                    @if (User.IsInRole("User") || User.IsInRole("Librarian") || User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Libraries", "Index", "Libraries", null, null, null, null, null)</li>
+                        <li>@Html.ActionLink("Books", "Index", "Books", null, null, null, null, null)</li>
 
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("Roles", "AddRole", "Account", null, null, null, null, null)</li>
+                        }
+
+                        if (User.IsInRole("User"))
+                        {
+                            <li>@Html.ActionLink("Reserve Book", "ReserveBook", "Libraries", null, null, null, null, null)</li>
+                            <li>@Html.ActionLink("My reservations", "MyReservations", "Account", null, null, null, null, null)</li>
+                        }
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("About", "Index", "Home", null, null, "aboutID", null, null)</li>
+                        <li>@Html.ActionLink("Services", "Index", "Home", null, null, "servicesID", null, null)</li>
+                        <li>@Html.ActionLink("Contact", "Index", "Home", null, null, "contactID", null, null)</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

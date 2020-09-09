@@ -4,72 +4,80 @@
     ViewBag.Title = "Index";
 }
 
-<div class="container" style="padding:30px 0px 15px 0px">
-    <p>
-        @Html.ActionLink("Add Book", "Create", null, new { @class = "btn btn-primary" })
-    </p>
-    <table class="table" id="booksTable">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.BookName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Author)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Price)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Publisher)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Language)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-
-        <tbody>
-            @foreach (var item in Model)
-            {
+    <div class="container" style="padding:30px 0px 15px 0px">
+        @if (!User.IsInRole("User"))
+        {
+            <p>
+                @Html.ActionLink("Add Book", "Create", null, new { @class = "btn btn-primary" })
+            </p>
+        }
+        <table class="table" id="booksTable">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BookName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Author)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Price)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Publisher)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Language)
-                    </td>
-                    <td>
-
-                        <button style="border:none;" type="button" onclick="location.href='@Url.Action("Edit", "Books", new { id = item.BookId })'">
-                            <img style="height:15px; width:15px;" src="~/Images/edit.png">
-                        </button>
-
-                        <button style="border:none" type="button" onclick="location.href='@Url.Action("Details", "Books", new { id = item.BookId })'">
-                            <img style="height:15px; width:15px;" src="~/Images/view-details-32.png">
-                        </button>
-
-                        <button style="border:none" class="js-delete" data-id="@item.BookId">
-                            <img style="height:15px; width:15px;" src="~/Images/remove.jpg">
-                        </button>
-
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BookName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Author)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Publisher)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Language)
+                    </th>
+                    <th></th>
                 </tr>
-            }
+            </thead>
 
-        </tbody>
-    </table>
-</div>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BookName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Author)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Publisher)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Language)
+                        </td>
+                        <td>
+                            @if (!User.IsInRole("User"))
+                            {
+                                <button style="border:none;" type="button" onclick="location.href='@Url.Action("Edit", "Books", new { id = item.BookId })'">
+                                    <img style="height:15px; width:15px;" src="~/Images/edit.png">
+                                </button>
+
+                            }
+
+                            <button style="border:none" type="button" onclick="location.href='@Url.Action("Details", "Books", new { id = item.BookId })'">
+                                <img style="height:15px; width:15px;" src="~/Images/view-details-32.png">
+                            </button>
+
+                            @if (!User.IsInRole("User"))
+                            {
+                                <button style="border:none" class="js-delete" data-id="@item.BookId">
+                                    <img style="height:15px; width:15px;" src="~/Images/remove.jpg">
+                                </button>
+                            }
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
 
 
 @section scripts{

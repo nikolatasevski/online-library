@@ -13,17 +13,20 @@ using OnlineLibrary.Models;
 
 namespace OnlineLibrary.Controllers
 {
+    [Authorize]
     public class LibrariesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Libraries
+        [Authorize(Roles =("Admin, Librarian, User"))]
         public ActionResult Index()
         {
             return View(db.Libraries.ToList());
         }
 
         // GET: Libraries/Details/5
+        [Authorize(Roles = ("Admin, Librarian, User"))]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,6 +42,7 @@ namespace OnlineLibrary.Controllers
         }
 
         // GET: Libraries/Create
+        [Authorize(Roles = ("Admin, Librarian"))]
         public ActionResult Create()
         {
             return View();
@@ -48,6 +52,7 @@ namespace OnlineLibrary.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = ("Admin, Librarian"))]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "LibraryId,Name,Address")] Library library)
         {
@@ -62,6 +67,7 @@ namespace OnlineLibrary.Controllers
         }
 
         // GET: Libraries/Edit/5
+        [Authorize(Roles = ("Admin, Librarian"))]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,6 +86,7 @@ namespace OnlineLibrary.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = ("Admin, Librarian"))]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "LibraryId,Name,Address")] Library library)
         {
@@ -93,6 +100,7 @@ namespace OnlineLibrary.Controllers
         }
 
         // GET: Libraries/Delete/5
+        [Authorize(Roles = ("Admin, Librarian"))]
         public ActionResult Delete(int id)
         {
             Library library = db.Libraries.Find(id);
@@ -111,7 +119,7 @@ namespace OnlineLibrary.Controllers
         }
 
         //GET: AddToLibrary
-
+        [Authorize(Roles = ("Admin, Librarian"))]
         public ActionResult AddToLibrary (int id)
         {
             var model = new AddToLibrary();
@@ -124,6 +132,7 @@ namespace OnlineLibrary.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = ("Admin, Librarian"))]
         public ActionResult AddToLibrary(AddToLibrary model)
         {
             var library = db.Libraries.Find(model.selectedLibrary);

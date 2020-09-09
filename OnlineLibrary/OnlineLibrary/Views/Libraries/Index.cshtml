@@ -5,9 +5,13 @@
 }
 
     <div class="container" style="padding:30px 0px 15px 0px">
-        <div style="padding-bottom:20px;">
-            @Html.ActionLink("Add Library", "Create", null, new { @class = "btn btn-primary" })
-        </div>
+        @if (!User.IsInRole("User"))
+        {
+            <div style="padding-bottom:20px;">
+                @Html.ActionLink("Add Library", "Create", null, new { @class = "btn btn-primary" })
+            </div>
+        }
+
         <table class="table" id="librariesTable">
             <thead>
                 <tr>
@@ -32,21 +36,30 @@
                             @Html.DisplayFor(modelItem => item.Address)
                         </td>
                         <td>
-                            <button style="border:none;" type="button" onclick="location.href='@Url.Action("AddToLibrary", "Libraries", new { id = item.LibraryId })'">
-                                <img style="height:15px; width:15px;" src="~/Images/addBook.jpg">
-                            </button>
 
-                            <button style="border:none;" type="button" onclick="location.href='@Url.Action("Edit", "Libraries", new { id = item.LibraryId })'">
-                                <img style="height:15px; width:15px;" src="~/Images/edit.png">
-                            </button>
+                            @if (!User.IsInRole("User"))
+                            {
+                                <button style="border:none;" type="button" onclick="location.href='@Url.Action("AddToLibrary", "Libraries", new { id = item.LibraryId })'">
+                                    <img style="height:15px; width:15px;" src="~/Images/addBook.jpg">
+                                </button>
+
+                                <button style="border:none;" type="button" onclick="location.href='@Url.Action("Edit", "Libraries", new { id = item.LibraryId })'">
+                                    <img style="height:15px; width:15px;" src="~/Images/edit.png">
+                                </button>
+
+                            }
 
                             <button style="border:none" type="button" onclick="location.href='@Url.Action("Details", "Libraries", new { id = item.LibraryId })'">
                                 <img style="height:15px; width:15px;" src="~/Images/view-details-32.png">
                             </button>
 
-                            <button style="border:none" class="js-delete" data-id="@item.LibraryId">
-                                <img style="height:15px; width:15px;" src="~/Images/remove.jpg">
-                            </button>
+                            @if (!User.IsInRole("User"))
+                            {
+
+                                <button style="border:none" class="js-delete" data-id="@item.LibraryId">
+                                    <img style="height:15px; width:15px;" src="~/Images/remove.jpg">
+                                </button>
+                            }
 
                         </td>
                     </tr>
