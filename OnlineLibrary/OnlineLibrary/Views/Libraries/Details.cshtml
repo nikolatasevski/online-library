@@ -25,6 +25,9 @@
             </dd>
 
         </dl>
+        @if (!User.IsInRole("User"))
+        {
             @Html.ActionLink("Edit", "Edit", new { id = Model.LibraryId }, new { @class = "btn btn-primary" })
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+        }
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
     </div>

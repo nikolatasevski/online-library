@@ -227,3 +227,8 @@ C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\O
 C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.reservationFix.resources
 C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.reservationSetAdded.resources
 C:\Users\Nik\source\repos\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.virtualInBookReservation.resources
+C:\Users\Nikola\source\repos\OnlineLibrary\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.changedBookModel.resources
+C:\Users\Nikola\source\repos\OnlineLibrary\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.reservationAdded.resources
+C:\Users\Nikola\source\repos\OnlineLibrary\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.reservationFix.resources
+C:\Users\Nikola\source\repos\OnlineLibrary\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.reservationSetAdded.resources
+C:\Users\Nikola\source\repos\OnlineLibrary\online-library\OnlineLibrary\OnlineLibrary\obj\Debug\OnlineLibrary.Migrations.virtualInBookReservation.resources

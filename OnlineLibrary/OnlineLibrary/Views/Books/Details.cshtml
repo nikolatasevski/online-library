@@ -52,7 +52,10 @@
             </dl>
         </div>
         <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }, new { @class = "btn btn-primary" })
+            @if (!User.IsInRole("User"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }, new { @class = "btn btn-primary" })
+            }
             @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
         </p>
 

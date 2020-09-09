@@ -104,7 +104,16 @@ namespace OnlineLibrary.Controllers
         public ActionResult Delete(int id)
         {
             Library library = db.Libraries.Find(id);
+
+            var bookReservations = db.BookReservations.Where(u => u.library.LibraryId == id).ToList();
+
+            foreach(var reservation in bookReservations)
+            {
+                db.BookReservations.Remove(reservation);
+            }
+
             db.Libraries.Remove(library);
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }
