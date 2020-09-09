@@ -1,0 +1,33 @@
+﻿@model IEnumerable<OnlineLibrary.Models.BookReservation>
+@{
+    ViewBag.Title = "MyReservations";
+}
+    <div class="container" style="padding:30px 0px 15px 0px">
+        <h3>Your Reservations :</h3>
+        <table class="table" id="reservationsTable">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Library Name")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Books")
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.library.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.selectedBook.BookName)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

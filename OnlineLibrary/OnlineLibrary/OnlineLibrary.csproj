@@ -193,6 +193,22 @@
     <Compile Include="Migrations\202009071248317_changedBookModel.Designer.cs">
       <DependentUpon>202009071248317_changedBookModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009072123399_reservationAdded.cs" />
+    <Compile Include="Migrations\202009072123399_reservationAdded.Designer.cs">
+      <DependentUpon>202009072123399_reservationAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009072156099_reservationFix.cs" />
+    <Compile Include="Migrations\202009072156099_reservationFix.Designer.cs">
+      <DependentUpon>202009072156099_reservationFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009091113237_reservationSetAdded.cs" />
+    <Compile Include="Migrations\202009091113237_reservationSetAdded.Designer.cs">
+      <DependentUpon>202009091113237_reservationSetAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009091249076_virtualInBookReservation.cs" />
+    <Compile Include="Migrations\202009091249076_virtualInBookReservation.Designer.cs">
+      <DependentUpon>202009091249076_virtualInBookReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddRole.cs" />
@@ -202,6 +218,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Library.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\BookReservation.cs" />
+    <Compile Include="Models\ReserveBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -533,6 +551,8 @@
     <Content Include="Views\Books\Details.cshtml" />
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Libraries\ReserveBook.cshtml" />
+    <Content Include="Views\Account\MyReservations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -562,6 +582,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009071248317_changedBookModel.resx">
       <DependentUpon>202009071248317_changedBookModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009072123399_reservationAdded.resx">
+      <DependentUpon>202009072123399_reservationAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009072156099_reservationFix.resx">
+      <DependentUpon>202009072156099_reservationFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009091113237_reservationSetAdded.resx">
+      <DependentUpon>202009091113237_reservationSetAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009091249076_virtualInBookReservation.resx">
+      <DependentUpon>202009091249076_virtualInBookReservation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

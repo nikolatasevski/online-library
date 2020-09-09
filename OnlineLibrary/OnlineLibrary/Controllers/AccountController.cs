@@ -18,6 +18,7 @@ namespace OnlineLibrary.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -63,6 +64,17 @@ namespace OnlineLibrary.Controllers
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
+        }
+
+        // GET: /Account/MyReservations
+        [HttpGet]
+        public ActionResult MyReservations()
+        {
+            var userID = User.Identity.GetUserId();
+            List<BookReservation> reservations = db.BookReservations.Where(m => m.user.Id == userID).ToList();
+
+
+            return View(reservations);
         }
 
         [HttpGet]

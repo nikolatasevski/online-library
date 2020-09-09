@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Dynamic;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using OnlineLibrary.Models;
 
 namespace OnlineLibrary.Controllers
@@ -131,6 +134,39 @@ namespace OnlineLibrary.Controllers
             return RedirectToAction("Index","Libraries");
         }
 
+        //GET: ReserveBook
+        public ActionResult ReserveBook()
+        {
+            var model = new ReserveBook();
+            model.allLibraries = db.Libraries.ToList();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult ReserveBook(int allLibraries, int book)
+        {
+            BookReservation reservation = new BookReservation();
+            reservation.library = db.Libraries.Where(m => m.LibraryId == allLibraries).First();
+            reservation.selectedBook = db.Books.Where(m => m.BookId == book).First();
+            var userID = User.Identity.GetUserId();
+            reservation.user = db.Users.Where(m => m.Id == userID).First();
+            db.Users.Where(m => m.Id == userID).First().reservedBooks.Add(reservation);
+
+            db.BookReservations.Add(reservation);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Home");
+        }
+
+        // POST: Libraries/ReserveBook/5
+        [HttpPost]
+        public ActionResult GetBookById(int libraryId)
+        {
+            List<Book> books = new List<Book>();
+            books = db.Libraries.Where(m => m.LibraryId == libraryId).First().Books.ToList();
+            SelectList booksList = new SelectList(books, "BookId", "BookName", 0);
+            return Json(booksList);
+        }
 
     }
 }

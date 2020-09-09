@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body style="padding: 50px 0px 0px 0px">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:darkslategray">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,6 +24,12 @@
                     <li>@Html.ActionLink("About", "Index", "Home", null, null, "aboutID", null, null)</li>
                     <li>@Html.ActionLink("Services", "Index", "Home", null, null, "servicesID", null, null)</li>
                     <li>@Html.ActionLink("Contact", "Index", "Home", null, null, "contactID", null, null)</li>
+                    <li>@Html.ActionLink("Libraries", "Index", "Libraries", null, null, null, null, null)</li>
+                    <li>@Html.ActionLink("Books", "Index", "Books", null, null, null, null, null)</li>
+                    <li>@Html.ActionLink("Reserve Book", "ReserveBook", "Libraries", null, null, null, null, null)</li>
+                    <li>@Html.ActionLink("My reservations", "MyReservations", "Account", null, null, null, null, null)</li>
+
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -31,7 +37,7 @@
     </div>
     <div>
         @RenderBody()
-        <footer style="text-align:center; display:block;background-color:#101010;" id="contactID">
+        <footer style="text-align:center; display:block; background-color:darkslategray;" id="contactID">
             <div class="container-fluid" style="height:auto; justify-content:center; display:flex">
                 <a href="https://www.facebook.com/">
                     <img src="~/Images/fb.png" style="width:50px; height:50px; border-style:none; margin: 10px 10px 0 0" />
