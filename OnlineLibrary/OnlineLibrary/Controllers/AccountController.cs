@@ -98,7 +98,7 @@ namespace OnlineLibrary.Controllers
             //Get all the usernames
             foreach (var user in userStore.Users)
             {
-                if(!user.Id.Equals("99bbdb02-d5c3-4aab-832b-c8e81aa27587"))
+                if (!UserManager.IsInRole(user.Id,"Admin"))
                 {
                     var r = new AddRole
                     {
